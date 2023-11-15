@@ -12,7 +12,7 @@ body {
     background: #0b0c0f;
     line-height: 1.7;
     color: #fff;
-    overflow-x: hidden;
+    overflow: auto;
     max-width: 2500px;
 }
 
@@ -53,6 +53,11 @@ img {
 .btn-cta:hover {
     opacity: 0.7;
 }
+
+.btn-gray {
+    background-color: rgb(168, 168, 168);
+}
+
 
 /* Header */
 .header {
@@ -418,7 +423,7 @@ img {
 /* Plans */
 
 .plan {
-    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -450,6 +455,7 @@ img {
     position: sticky;
     top: 0;
     background-color: #0b0c0f;
+    z-index: 10;
 }
 
 .plan .container-1 .col-2 {
@@ -459,7 +465,7 @@ img {
     gap: 20px;
     border-top: 1px solid rgba(200, 200, 200, 0.4);
     width: 100%;
-    margin-top: -200px;
+    margin-top: -150px;
     padding: 20px 0;
 }
 
@@ -492,6 +498,9 @@ img {
 
 .plan .plan-content {
     padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
 }
 
 .plan .plan-content {
@@ -512,12 +521,13 @@ img {
 }
 
 .plan .container-1 .col-3 .plan-content .btn {
-    display: inline-block;
+    display: block;
     color: #000;
     background-color: #fff;
-    padding: 12px 55px;
+    padding: 17px 25px;
     font-size: 16px;
     font-weight: 500;
+    margin-left: 0;
 }
 
 .plan .plan-content .btn:hover {
@@ -645,6 +655,113 @@ img {
     line-height: 3;
 }
 
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-box {
+    margin: 6% auto;
+    width: 600px;
+    background: #fff;
+    color: #333;
+    position: relative;
+    animation: ModalOpen 2s;
+}
+
+@keyframes ModalOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-body {
+    padding: 50px;
+}
+
+.modal-body h3 {
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.modal-body .btn {
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 0;
+    color: #fff;
+    font-weight: 300;
+}
+
+.modal-body .sub-title {
+    font-size: 13px;
+    color: #777;
+}
+
+.modal-body .sub-title a {
+    color: rgb(60, 136, 235);
+}
+
+.modal .close {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.modal .modal-footer {
+    background: #f7f7f9;
+    color: #333;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal .modal-footer a {
+    color: rgb(60, 136, 235);
+    font-size: 14px;
+}
+
+/* Form */
+.form-control {
+    margin: 20px 0;
+}
+
+.form-control label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-control input {
+    width: 100%;
+    border: 1px #555 solid;
+    border-radius: 5px;
+    height: 48px;
+    padding: 5px;
+}
+
+.form-control input:focus,
+.form-control input:hover {
+    outline: none;
+}
+
+
 /* Media queries  */
 
 @media (min-width: 1280px) {
@@ -674,6 +791,14 @@ img {
         object-fit: contain;
     }
 
+    .live-sports .legal-text {
+        text-align: left;
+    }
+
+    .pt-2 {
+        padding-top: 25px;
+    }
+
     .live-sports-logos {
         width: 300px;
     }
@@ -689,6 +814,7 @@ img {
 
     .plan .plan-content {
         border-right: none;
+        margin: 0;
     }
 
     .plan .container-1 {
@@ -767,9 +893,6 @@ img {
         margin-right: 80px;
     }
 
-    .plan .plan-content .pt-2 {
-        padding-top: 23px;
-    }
 
     .price-container {
         width: 80%;
